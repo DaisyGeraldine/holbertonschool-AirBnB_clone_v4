@@ -160,6 +160,7 @@ Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
 
 Daisy Chipana - [Github](https://github.com/DaisyGeraldine)
+Frank Quispe - [Github](https://github.com/QuispeFrank)
 
 Second part of Airbnb: Joann Vuong
 ## License
