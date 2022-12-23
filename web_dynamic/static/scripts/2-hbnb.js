@@ -6,10 +6,10 @@ $(document).ready(function () {
     } else {
       $('#api_status').removeClass('available');
     }
-	 }).fail((err) => {
+  }).fail((err) => {
     console.error(err);
     $('#api_status').removeClass('available');
-	 });
+  });
 
   const objIds = {};
   $('input[type="checkbox"]').on('click', function () {
