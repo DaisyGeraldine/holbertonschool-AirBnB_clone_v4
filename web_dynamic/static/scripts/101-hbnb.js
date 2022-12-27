@@ -107,7 +107,7 @@ $(document).ready(function () {
             </div>
   
             <div class="reviews">
-              <h2>Reviews <span data-id=${place.id}>show</span></h2>
+              <h2 data-id=${place.id}><p style="display:inline">Reviews</p>&nbsp<span data-id=${place.id}>show</span></h2>
               <ul></ul>
             </div>
 
@@ -128,7 +128,13 @@ $(document).ready(function () {
           // get user's reviews from API
           $.get(`http://127.0.0.1:5001/api/v1/places/${placeId}/reviews`, function (reviews) {
             console.log(reviews);
+            const countReviews = reviews.length;
+            console.log(countReviews + 'hola');
+            $(`.reviews h2[data-id="${placeId}"] p`).html(countReviews + ` Review${countReviews !== 1 ? 's' : ''}`);
+            console.log($(`.reviews h2[data-id="${placeId}"]`).text());
+            // $('.reviews h2').text(countReviews + 'Review');
             for (const review of reviews) {
+            // $('.reviews h2').text(countReviews + `Review <span data-id=${place.id}>hide</span>`);
               const date = new Date(Date.parse(review.updated_at));
               const day = date.getDate();
               const month = date.toLocaleString('en-US', { month: 'long' });
@@ -147,6 +153,7 @@ $(document).ready(function () {
           }).fail((err) => { console.err(err); });
         } else {
           $span.text('show');
+          $(`h2[data-id="${placeId}"] p`).text('Reviews');
           $ul.empty();
         }
       });
